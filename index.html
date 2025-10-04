@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Our App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            margin-bottom: 40px;
+            color: #333;
+            font-size: 2rem;
+        }
+
+        .qr-container {
+            display: flex;
+            gap: 60px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .qr-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            background: #f0f0f0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .store-logo {
+            width: 180px;
+            height: 60px;
+            object-fit: contain;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.9rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Download Our App</h1>
+
+        <div class="qr-container">
+            <div class="qr-box">
+                <div class="qr-code">
+                    <svg width="180" height="180" viewBox="0 0 180 180">
+                        <!-- QR Code placeholder pattern -->
+                        <rect fill="#000" width="180" height="180"/>
+                        <rect fill="#fff" x="10" y="10" width="30" height="30"/>
+                        <rect fill="#fff" x="140" y="10" width="30" height="30"/>
+                        <rect fill="#fff" x="10" y="140" width="30" height="30"/>
+                        <rect fill="#fff" x="50" y="50" width="20" height="20"/>
+                        <rect fill="#fff" x="80" y="50" width="20" height="20"/>
+                        <rect fill="#fff" x="110" y="50" width="20" height="20"/>
+                        <rect fill="#fff" x="50" y="80" width="20" height="20"/>
+                        <rect fill="#fff" x="110" y="80" width="20" height="20"/>
+                        <rect fill="#fff" x="50" y="110" width="20" height="20"/>
+                        <rect fill="#fff" x="80" y="110" width="20" height="20"/>
+                        <rect fill="#fff" x="110" y="110" width="20" height="20"/>
+                    </svg>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
+                     alt="App Store"
+                     class="store-logo">
+            </div>
+
+            <div class="qr-box">
+                <div class="qr-code">
+                    <svg width="180" height="180" viewBox="0 0 180 180">
+                        <!-- QR Code placeholder pattern -->
+                        <rect fill="#000" width="180" height="180"/>
+                        <rect fill="#fff" x="10" y="10" width="30" height="30"/>
+                        <rect fill="#fff" x="140" y="10" width="30" height="30"/>
+                        <rect fill="#fff" x="10" y="140" width="30" height="30"/>
+                        <rect fill="#fff" x="60" y="60" width="20" height="20"/>
+                        <rect fill="#fff" x="90" y="60" width="20" height="20"/>
+                        <rect fill="#fff" x="120" y="60" width="20" height="20"/>
+                        <rect fill="#fff" x="60" y="90" width="20" height="20"/>
+                        <rect fill="#fff" x="120" y="90" width="20" height="20"/>
+                        <rect fill="#fff" x="60" y="120" width="20" height="20"/>
+                        <rect fill="#fff" x="90" y="120" width="20" height="20"/>
+                        <rect fill="#fff" x="120" y="120" width="20" height="20"/>
+                    </svg>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                     alt="Google Play"
+                     class="store-logo">
+            </div>
+        </div>
+
+        <footer>
+            <a href="terms.html">Terms and Conditions</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
