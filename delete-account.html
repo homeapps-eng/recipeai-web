@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Your Account - RecipeAI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+
+        .warning-box h3 {
+            color: #856404;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .warning-box p {
+            color: #856404;
+            margin-bottom: 0;
+        }
+
+        .info-box {
+            background-color: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+
+        .info-box h3 {
+            color: #667eea;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .contact-method {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+
+        .contact-method h3 {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .email-link {
+            display: inline-block;
+            padding: 15px 30px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .email-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .back-link:hover {
+            background: #5568d3;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        strong {
+            color: #555;
+        }
+
+        .in-app-box {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+
+        .in-app-box h3 {
+            color: #2e7d32;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .in-app-box p {
+            color: #2e7d32;
+        }
+
+        ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        ol li {
+            margin-bottom: 10px;
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Delete Your Account</h1>
+            <p class="subtitle">Account Deletion Request</p>
+        </header>
+
+        <main>
+            <p>We're sorry to see you go. If you've decided to delete your RecipeAI account, we want to make the process as simple and transparent as possible.</p>
+
+            <div class="warning-box">
+                <h3>⚠️ Important: This Action is Permanent</h3>
+                <p><strong>Account deletion is irreversible.</strong> Once your account is deleted, you will permanently lose access to:</p>
+                <ul style="color: #856404; margin-top: 10px;">
+                    <li>All saved recipes (AI-generated and custom recipes)</li>
+                    <li>Your favorite recipes collection</li>
+                    <li>Recipe images and uploaded photos</li>
+                    <li>Your personalization settings (dietary restrictions, allergies, cuisine preferences)</li>
+                    <li>Recipe generation history</li>
+                    <li>Your profile information and preferences</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>This data cannot be recovered after deletion.</strong></p>
+            </div>
+
+            <h2>What Happens When You Delete Your Account?</h2>
+            <p>When you request account deletion, here's what will happen:</p>
+            <ul>
+                <li><strong>Immediate:</strong> Your account will be deactivated and you will no longer be able to log in</li>
+                <li><strong>Within 30 days:</strong> Most of your personal data will be permanently deleted from our systems:
+                    <ul style="margin-top: 10px;">
+                        <li>Profile information (name, email, avatar)</li>
+                        <li>All saved recipes and images</li>
+                        <li>User preferences and settings</li>
+                        <li>Recipe generation history</li>
+                    </ul>
+                </li>
+                <li><strong>Within 90 days:</strong> Backup copies will be permanently purged from our backup systems</li>
+                <li><strong>What we may retain:</strong> For legal and compliance purposes, we may retain:
+                    <ul style="margin-top: 10px;">
+                        <li>Transaction records (if you had a premium subscription) - up to 7 years as required by law</li>
+                        <li>Anonymized, aggregated analytics data that cannot identify you</li>
+                        <li>Records required for fraud prevention or legal compliance</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2>Active Subscription?</h2>
+            <p>If you have an active premium subscription:</p>
+            <ul>
+                <li><strong>Cancel your subscription first:</strong> We recommend canceling your subscription before deleting your account</li>
+                <li><strong>Access the Stripe Customer Portal:</strong> You can manage your subscription through the in-app billing portal</li>
+                <li><strong>No refunds:</strong> Deleting your account does not automatically cancel your subscription or provide a refund for unused time</li>
+                <li><strong>We can help:</strong> If you have billing concerns, contact us at <strong>support@recipe-ai.io</strong> before deleting your account</li>
+            </ul>
+
+            <div class="in-app-box">
+                <h3>✓ Easiest Option: Delete In-App</h3>
+                <p><strong>You can delete your account directly from the RecipeAI mobile app:</strong></p>
+                <ol>
+                    <li>Open the RecipeAI app on your device</li>
+                    <li>Go to <strong>Settings</strong> or <strong>Profile</strong></li>
+                    <li>Scroll down to find <strong>"Delete Account"</strong> or <strong>"Account Management"</strong></li>
+                    <li>Follow the prompts to confirm deletion</li>
+                    <li>Your account will be immediately deactivated</li>
+                </ol>
+                <p style="margin-top: 15px;"><strong>This is the fastest way to delete your account.</strong></p>
+            </div>
+
+            <div class="contact-section">
+                <h2>Request Deletion via Email</h2>
+                <p>If you cannot access the app or prefer to email us, send your deletion request to:</p>
+
+                <div class="contact-method">
+                    <h3>📧 Email Support</h3>
+                    <a href="mailto:support@recipe-ai.io?subject=Account Deletion Request" class="email-link">support@recipe-ai.io</a>
+                    <p style="margin-top: 15px; font-size: 0.95rem;">Subject: Account Deletion Request</p>
+                </div>
+
+                <div style="margin-top: 30px; text-align: left;">
+                    <p><strong>Please include in your email:</strong></p>
+                    <ul style="text-align: left; margin-top: 10px; color: white;">
+                        <li>The email address associated with your RecipeAI account</li>
+                        <li>Subject line: "Account Deletion Request"</li>
+                        <li>Confirmation that you understand the deletion is permanent</li>
+                        <li>(Optional) Brief feedback on why you're leaving (helps us improve)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>📋 Verification Required</h3>
+                <p>To protect your account security, we may ask you to verify your identity before processing the deletion. This may include:</p>
+                <ul style="margin-top: 10px;">
+                    <li>Confirming your email address</li>
+                    <li>Answering account security questions</li>
+                    <li>Logging into your account one final time</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>Response Time:</strong> We will process your deletion request within 3-5 business days and send you a confirmation email.</p>
+            </div>
+
+            <h2>Need Help Instead of Deletion?</h2>
+            <p>Before you delete your account, consider if one of these options might help:</p>
+            <ul>
+                <li><strong>Having technical issues?</strong> Contact our support team at <a href="mailto:support@recipe-ai.io" style="color: #667eea;">support@recipe-ai.io</a> - we're here to help</li>
+                <li><strong>Concerned about privacy?</strong> Review your <a href="privacy.html" style="color: #667eea;">Privacy Settings</a> or adjust notification preferences</li>
+                <li><strong>Need a break?</strong> You can simply log out and return anytime - your recipes will still be there</li>
+                <li><strong>Subscription costs?</strong> Cancel your premium subscription and continue using the free tier</li>
+            </ul>
+
+            <h2>Your Privacy Rights</h2>
+            <p>Account deletion is just one of your privacy rights. You also have the right to:</p>
+            <ul>
+                <li><strong>Access your data:</strong> Request a copy of all personal information we hold about you</li>
+                <li><strong>Export your recipes:</strong> Download your recipes in a portable format before deletion</li>
+                <li><strong>Correct your data:</strong> Update or fix any inaccurate information</li>
+                <li><strong>Restrict processing:</strong> Limit how we use your data in certain circumstances</li>
+            </ul>
+            <p>For more information about your privacy rights, see our <a href="privacy.html" style="color: #667eea;">Privacy Policy</a>.</p>
+
+            <h2>Questions or Feedback?</h2>
+            <p>We value your feedback and would love to understand how we can improve. If you have any questions about account deletion or want to share why you're leaving, please reach out:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:support@recipe-ai.io" style="color: #667eea;">support@recipe-ai.io</a></li>
+                <li><strong>Privacy Inquiries:</strong> <a href="mailto:privacy@recipe-ai.io" style="color: #667eea;">privacy@recipe-ai.io</a></li>
+            </ul>
+
+            <div class="info-box" style="margin-top: 40px;">
+                <h3>📞 Need More Help?</h3>
+                <p>If you have any questions about the account deletion process, data retention, or privacy practices, our support team is here to assist you.</p>
+                <p style="margin-top: 10px;"><strong>Email:</strong> <a href="mailto:support@recipe-ai.io" style="color: #667eea; font-weight: bold;">support@recipe-ai.io</a></p>
+                <p style="margin-top: 5px;"><strong>Response Time:</strong> Within 24-48 hours</p>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </main>
+
+        <footer>
+            <a href="index.html">Home</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+        </footer>
+    </div>
+</body>
+</html>
