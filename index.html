@@ -170,6 +170,9 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
+            text-decoration: none;
+            display: block;
+            color: inherit;
         }
 
         .download-card:hover {
@@ -399,23 +402,23 @@
             <div class="download-section">
                 <h2 class="section-title">Download Now</h2>
                 <div class="download-options">
-                    <div class="download-card">
+                    <a href="https://www.recipe-ai.io/coming-soon" class="download-card">
                         <div class="qr-code">
                             <img src="qr-ios.png" alt="iOS Coming Soon QR Code" />
                         </div>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
                              alt="Coming Soon on App Store"
                              class="store-badge">
-                    </div>
+                    </a>
 
-                    <div class="download-card">
+                    <a href="https://play.google.com/store/apps/details?id=com.homeapps.recipeai" class="download-card" target="_blank" rel="noopener noreferrer">
                         <div class="qr-code">
                             <img src="qr.png" alt="Google Play QR Code" />
                         </div>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
                              alt="Get it on Google Play"
                              class="store-badge">
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
