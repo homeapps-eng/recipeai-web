@@ -391,13 +391,56 @@
     </div>
 
     <script>
-        function handleSubmit(event) {
+        async function handleSubmit(event) {
             event.preventDefault();
             const email = event.target.querySelector('.email-input').value;
+            const button = event.target.querySelector('.notify-btn');
+            const input = event.target.querySelector('.email-input');
 
-            // You can integrate with your backend here
-            alert('Thank you! We\'ll notify you at ' + email + ' when RecipeAI launches on iOS.');
-            event.target.reset();
+            // Disable form while submitting
+            button.disabled = true;
+            button.textContent = 'Saving...';
+            input.disabled = true;
+
+            try {
+                // Call your recipeai-nexus API
+                const response = await fetch('https://api.recipe-ai.io/api/v1/emails/subscribe', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email: email })
+                });
+
+                const data = await response.json();
+
+                if (response.ok && data.success) {
+                    // Success
+                    button.textContent = '✓ Subscribed!';
+                    button.style.background = '#10b981';
+
+                    setTimeout(() => {
+                        alert(data.message || 'Thank you! We\'ll notify you when RecipeAI launches on iOS.');
+                        event.target.reset();
+
+                        // Reset button
+                        button.disabled = false;
+                        button.textContent = 'Notify Me';
+                        button.style.background = 'white';
+                        input.disabled = false;
+                    }, 1000);
+                } else {
+                    throw new Error(data.message || 'Failed to subscribe');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Oops! Something went wrong. Please try again.');
+
+                // Reset button
+                button.disabled = false;
+                button.textContent = 'Notify Me';
+                input.disabled = false;
+            }
 
             return false;
         }
