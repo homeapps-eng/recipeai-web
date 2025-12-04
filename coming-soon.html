@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - RecipeAI for iOS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            overflow-x: hidden;
+            background: #0a0a0a;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Animated background */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #20c997 0%, #10b981 50%, #059669 100%);
+            z-index: 0;
+        }
+
+        .background::before {
+            content: '';
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -400px;
+            right: -200px;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .background::after {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -300px;
+            left: -150px;
+            animation: float 15s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(50px, 50px) scale(1.1);
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            margin-bottom: 40px;
+            animation: scaleIn 0.8s ease-out;
+        }
+
+        .logo {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 10px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .subtitle {
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 600;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        .description {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 400;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+
+        .status-badge::before {
+            content: '🚀';
+            margin-right: 8px;
+        }
+
+        .notify-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px 30px;
+            margin-top: 50px;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .notify-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .notify-section p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 25px;
+        }
+
+        .email-form {
+            display: flex;
+            gap: 12px;
+            max-width: 500px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .email-input {
+            flex: 1;
+            min-width: 250px;
+            padding: 14px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .email-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .email-input:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .notify-btn {
+            padding: 14px 32px;
+            background: white;
+            color: #10b981;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .notify-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+            animation: fadeInUp 0.8s ease-out 0.7s both;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 25px 20px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+
+        .feature-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out 0.8s both;
+        }
+
+        .back-link:hover {
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        .back-link::before {
+            content: '← ';
+        }
+
+        @media (max-width: 768px) {
+            .email-form {
+                flex-direction: column;
+            }
+
+            .email-input {
+                width: 100%;
+            }
+
+            .notify-btn {
+                width: 100%;
+            }
+
+            .features-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .features-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17758304494"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-17758304494');
+    </script>
+</head>
+<body>
+    <div class="background"></div>
+
+    <div class="container">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="logo.png" alt="RecipeAI Logo">
+            </div>
+        </div>
+
+        <h1>Coming Soon to iOS</h1>
+        <p class="subtitle">RecipeAI for iPhone & iPad</p>
+
+        <div class="status-badge">Launching Soon</div>
+
+        <p class="description">
+            We're putting the finishing touches on RecipeAI for iOS. Transform your cooking experience with AI-powered recipe generation, personalized meal planning, and smart nutrition tracking.
+        </p>
+
+        <div class="features-list">
+            <div class="feature-item">
+                <div class="feature-icon">📸</div>
+                <h3>AI Recipe Magic</h3>
+                <p>Snap any ingredient and get instant recipes</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🍎</div>
+                <h3>iOS Optimized</h3>
+                <p>Native design for iPhone and iPad</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">✨</div>
+                <h3>Smart Features</h3>
+                <p>Siri shortcuts, widgets, and more</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🔥</div>
+                <h3>Nutrition Tracking</h3>
+                <p>Calorie counts and nutritional info</p>
+            </div>
+        </div>
+
+        <div class="notify-section">
+            <h2>Get Notified at Launch</h2>
+            <p>Be the first to know when RecipeAI hits the App Store</p>
+            <form class="email-form" onsubmit="return handleSubmit(event)">
+                <input type="email" class="email-input" placeholder="Enter your email" required>
+                <button type="submit" class="notify-btn">Notify Me</button>
+            </form>
+        </div>
+
+        <a href="index.html" class="back-link">Back to home</a>
+    </div>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-analytics.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyAChp8pBU7KUYFVMpZX0KjlV_PBV0tq_No",
+        authDomain: "recipe-ai-web-4753f.firebaseapp.com",
+        projectId: "recipe-ai-web-4753f",
+        storageBucket: "recipe-ai-web-4753f.firebasestorage.app",
+        messagingSenderId: "999303130283",
+        appId: "1:999303130283:web:849e6a1f21b0f883a61bee",
+        measurementId: "G-1XPNF62JEP"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('.email-input').value;
+
+            // You can integrate with your backend here
+            alert('Thank you! We\'ll notify you at ' + email + ' when RecipeAI launches on iOS.');
+            event.target.reset();
+
+            return false;
+        }
+    </script>
+</body>
+</html>
